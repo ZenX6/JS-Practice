@@ -1,24 +1,24 @@
-function twoDimensionalSum(arr){
-    let sum = 0
-    for (let  i = 0; i < arr.length; i++){
-        for (let j = 0 ; j < arr[i].length; j++){
-            sum += arr[i][j]
+function maxColumn(matrix) {
+   let result = []
+    
+   for (let i = 0; i < matrix.length; i++){
+    let max = matrix[0][i]
+    for (let j = 1; j < matrix[i].length; j++){
+        
+        if (matrix[j][i] > max){
+            max = matrix[j][i]
+            
         }
+       
     }
-    return sum
-}
-
-
-
-let arr1 = [
-    [1, 3],
-    [-4, 7, 10],
-    [2]
-];
-console.log(twoDimensionalSum(arr1)); // 19
-
-let arr2 = [
-    [],
-    [3, 1, 2],
-];
-console.log(twoDimensionalSum(arr2)); // 6
+    result.push(max)
+   }
+   return result
+  }
+  
+  
+  matrix = [[ 5,  9, 21],
+            [ 9, 19,  6],
+            [12, 14, 15]]
+  
+  console.log(maxColumn(matrix)); // [12, 19, 21]
